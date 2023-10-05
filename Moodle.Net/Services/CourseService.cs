@@ -13,10 +13,20 @@ public class CourseService
         _client = client;
     }
 
-    public CourseList GetCourses()
+    public List<Course> GetCourses()
     {
         var response = _client.WithService("mod_assign_get_assignments").Get<Course>();
-        return JsonConvert.DeserializeObject<CourseList>(response.Content);
+        var courseList = JsonConvert.DeserializeObject<CourseList>(response.Content);
+        return courseList.Courses;
     }
 
+    public Course GetCourseByName(string courseName)
+    {
+        return GetCourses().Find(c => c.FullName == courseName || c.ShortName == courseName);
+    }
+
+    public Course GetCourseById(int id)
+    {
+        return GetCourses().Find(c => c.Id == id);
+    }
 }

@@ -9,7 +9,6 @@ public static class ClientExtension
     public static List<Course> GetCourses(this Client client)
     {
         var courseService = new CourseService(client);
-        var response = courseService.GetCourses();
-        return response.Courses;
+        return courseService.GetCourses();
     }
 }
