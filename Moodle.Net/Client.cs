@@ -5,22 +5,14 @@ namespace Moodle.Net;
 public class Client
 {
     private readonly RestClient _restClient;
+    private string _endpoint;
 
-    public Client(string baseUrl)
+    public Client(string baseUrl, string token, string endpoint)
     {
         _restClient = new RestClient(baseUrl);
-    }
-
-    public Client WithToken(string token)
-    {
         _restClient.AddDefaultParameter("wstoken", token);
-        return this;
-    }
-
-    public Client AsJson()
-    {
         _restClient.AddDefaultParameter("moodlewsrestformat", "json");
-        return this;
+        _endpoint = endpoint;
     }
 
     public Client WithService(string service)
@@ -28,4 +20,11 @@ public class Client
         _restClient.AddDefaultParameter("wsfunction", service);
         return this;
     }
+
+    public RestResponse Get<T>()
+    {
+        RestRequest request = new(_endpoint, Method.Get);
+        return _restClient.Execute<T>(request);
+    }
+
 }

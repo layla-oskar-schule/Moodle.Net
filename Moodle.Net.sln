@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moodle.Net", "Moodle.Net\Moodle.Net.csproj", "{C4573FF4-2C9B-42CE-AC64-510EDB6AC4A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moodle.Net-ConsoleClient", "Moodle.Net-ConsoleClient\Moodle.Net-ConsoleClient.csproj", "{F906C02D-DF57-46EB-9980-2B8DBF1222A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{C4573FF4-2C9B-42CE-AC64-510EDB6AC4A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4573FF4-2C9B-42CE-AC64-510EDB6AC4A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4573FF4-2C9B-42CE-AC64-510EDB6AC4A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F906C02D-DF57-46EB-9980-2B8DBF1222A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F906C02D-DF57-46EB-9980-2B8DBF1222A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F906C02D-DF57-46EB-9980-2B8DBF1222A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F906C02D-DF57-46EB-9980-2B8DBF1222A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
