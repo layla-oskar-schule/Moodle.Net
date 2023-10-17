@@ -2,12 +2,12 @@ using RestSharp;
 
 namespace Moodle.Net;
 
-public class Client
+public class MoodleClient
 {
     private readonly RestClient _restClient;
     private string _endpoint;
 
-    public Client(string baseUrl, string token, string endpoint)
+    public MoodleClient(string baseUrl, string token, string endpoint)
     {
         _restClient = new RestClient(baseUrl);
         _restClient.AddDefaultParameter("wstoken", token);
@@ -15,7 +15,7 @@ public class Client
         _endpoint = endpoint;
     }
 
-    public Client WithService(string service)
+    public MoodleClient WithService(string service)
     {
         _restClient.AddDefaultParameter("wsfunction", service);
         return this;

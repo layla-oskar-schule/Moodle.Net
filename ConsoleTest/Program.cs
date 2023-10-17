@@ -6,8 +6,12 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        var client = new Moodle.Net.Client("https://moodle.oszimt.de/", "9903806f77bc22af4fd0ed36d23e2ca9",
+        var client = new Moodle.Net.MoodleClient("https://moodle.oszimt.de/", "",
             "webservice/rest/server.php");
-        Console.WriteLine(client.GetCourses()[0].FullName);
+        var course = client.GetCourseById(5027);
+        foreach (var assignment in course.Assignments)
+        {
+            Console.WriteLine(assignment.Id);
+        }
     }
 }

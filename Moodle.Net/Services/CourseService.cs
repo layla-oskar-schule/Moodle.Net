@@ -6,9 +6,9 @@ namespace Moodle.Net.Services;
 
 public class CourseService
 {
-    private readonly Client _client;
+    private readonly MoodleClient _client;
 
-    public CourseService(Client client)
+    public CourseService(MoodleClient client)
     {
         _client = client;
     }
