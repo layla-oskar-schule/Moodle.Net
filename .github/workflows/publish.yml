@@ -24,7 +24,7 @@ jobs:
             - name: Publish Moodle.Net NuGet package
               run: |
                   cd /home/runner/work/Moodle.Net/Moodle.Net
-                  run: dotnet pack -c Release --no-build
+                  dotnet pack -c Release --no-build
               working-directory: /
 
             - name: Create release
