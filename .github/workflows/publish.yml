@@ -30,7 +30,7 @@ jobs:
             - name: Create release
               id: create_release
               run: |
-                  cd ./Moodle.Net/bin/Release/net7.0
+                  cd ./Moodle.Net/bin/Release/net7.0/net7.0
                   ls
               #uses: softprops/action-gh-release@v1
               #with:
