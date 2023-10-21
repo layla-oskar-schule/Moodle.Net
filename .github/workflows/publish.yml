@@ -27,16 +27,11 @@ jobs:
                   dotnet pack -c Release --no-build
               working-directory: /
 
-            - name: Tag
-              if: startsWith(github.ref, 'refs/heads/release/')
-              run: |
-                  git tag "v$env:GitVersion_SemVer"
-                  git push origin "v$env:GitVersion_SemVer"
-            - name: Release
-              if: startsWith(github.ref, 'refs/heads/release/')
-              uses: softprops/action-gh-release@v1
-              with:
-                  name: v${{ env.GitVersion_SemVer }}
-                  prerelease: ${{ env.GitVersion_PreReleaseLabel != '' }}
+            - name: Create release
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                  git tag -a v1.0.0 -m "Release 1.0.0"
+                  git push --follow-tags
+
+                  hub release create v1.0.0 -m "Release 1.0.0"
