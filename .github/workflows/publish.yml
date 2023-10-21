@@ -29,13 +29,10 @@ jobs:
 
             - name: Create release
               id: create_release
-              run: |
-                  cd ./Moodle.Net/bin/Release/net7.0/
-                  ls
-              #uses: softprops/action-gh-release@v1
-              #with:
-              #files: ./Moodle.Net/bin/Release/net7.0/Moodle.Netv.nupkg
-              #title: Release v1.0.0
-              #tag_name: v1.0.0
+              uses: softprops/action-gh-release@v1
+              with:
+                  files: ./Moodle.Net/bin/Release/net7.0/Moodle.Net.1.0.0.nupkg
+                  title: Release v1.0.0
+                  tag_name: v1.0.0
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
