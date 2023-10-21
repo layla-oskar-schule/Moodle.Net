@@ -1,4 +1,4 @@
-name: Publish Moodle.Net
+name: Publish Moodle.Net Library
 
 on:
     push:
