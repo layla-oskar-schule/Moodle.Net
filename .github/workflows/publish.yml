@@ -24,15 +24,15 @@ jobs:
             - name: Publish Moodle.Net NuGet package
               run: |
                   cd /home/runner/work/Moodle.Net/Moodle.Net/Moodle.Net
-                  dotnet pack -c Release --no-build
+                  dotnet pack -c Release --no-build -p:PackageOutputName=Moodle.Net-dev
               working-directory: /
 
             - name: Create release
               id: create_release
               uses: softprops/action-gh-release@v1
               with:
-                  files: ./Moodle.Net/bin/Release/net7.0/Moodle.Net.1.0.0.nupkg
-                  title: Release v1.0.0
-                  tag_name: v1.0.0
+                  files: ./Moodle.Net/bin/Release/net7.0/Moodle.Net-dev.nupkg
+                  title: Moodle.Net-dev
+                  tag_name: Moodle.Net-dev
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
