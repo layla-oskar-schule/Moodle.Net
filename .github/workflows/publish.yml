@@ -30,6 +30,8 @@ jobs:
             - name: Create release
               id: create_release
               uses: softprops/action-gh-release@v1
+              run: |
+                  ls
               with:
                   files: ./Moodle.Net/bin/Release/*.nupkg
                   title: Release v1.0.0
