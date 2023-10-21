@@ -30,13 +30,13 @@ jobs:
             - name: Tag
               if: startsWith(github.ref, 'refs/heads/release/')
               run: |
-                git tag "v$env:GitVersion_SemVer"
-                git push origin "v$env:GitVersion_SemVer"
+                  git tag "v$env:GitVersion_SemVer"
+                  git push origin "v$env:GitVersion_SemVer"
             - name: Release
               if: startsWith(github.ref, 'refs/heads/release/')
               uses: softprops/action-gh-release@v1
               with:
-                name: v${{ env.GitVersion_SemVer }}
-                prerelease: ${{ env.GitVersion_PreReleaseLabel != '' }}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  name: v${{ env.GitVersion_SemVer }}
+                  prerelease: ${{ env.GitVersion_PreReleaseLabel != '' }}
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
