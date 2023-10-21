@@ -1,0 +1,33 @@
+name: Publish Moodle.Net
+
+on:
+    push:
+        branches:
+            - developer
+
+jobs:
+    build-and-publish:
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v2
+
+          - name: Setup .NET
+            uses: actions/setup-dotnet@v1
+            with: dotnet-version: 7.0
+
+          - name: Build Moodle.Net
+            run: dotnet build
+
+          - name: Publish Moodle.Net NuGet package
+            run: dotnet pack -c Release --nobuild
+            working-directory: ./Moodle.Net
+
+          - name: Create release
+            id: create_release
+            uses: softprops/action-gh-release@v1
+            with:
+              files: ./Moodle.Net/bin/Release/*.nupkg
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
