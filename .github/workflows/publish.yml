@@ -27,12 +27,16 @@ jobs:
                   dotnet pack -c Release --no-build
               working-directory: /
 
-            - name: Create release
-              id: create_release
+            - name: Tag
+              if: startsWith(github.ref, 'refs/heads/release/')
+              run: |
+                git tag "v$env:GitVersion_SemVer"
+                git push origin "v$env:GitVersion_SemVer"
+            - name: Release
+              if: startsWith(github.ref, 'refs/heads/release/')
               uses: softprops/action-gh-release@v1
               with:
-                  files: ./Moodle.Net/bin/Release/*.nupkg
-                  title: Release v1.0.0
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              if: github.event_name == 'workflow_dispatch'
+                name: v${{ env.GitVersion_SemVer }}
+                prerelease: ${{ env.GitVersion_PreReleaseLabel != '' }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
