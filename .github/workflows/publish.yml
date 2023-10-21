@@ -29,10 +29,13 @@ jobs:
 
             - name: Create release
               id: create_release
-              uses: softprops/action-gh-release@v1
-              with:
-                  files: ./Moodle.Net/bin/Release/net7.0/Moodle.Net-dev.nupkg
-                  title: Moodle.Net-dev
-                  tag_name: Moodle.Net-dev
+              run: |
+                  cd ./Moodle.Net/bin/Release/net7.0
+                  ls
+              #uses: softprops/action-gh-release@v1
+              #with:
+              #files: ./Moodle.Net/bin/Release/net7.0/Moodle.Net-dev.nupkg
+              #title: Moodle.Net-dev
+              #tag_name: Moodle.Net-dev
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
