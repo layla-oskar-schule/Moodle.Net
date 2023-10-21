@@ -7,4 +7,4 @@ riderModule.iml
 Moodle.Net-ConsoleClient
 .vs
 
-/ConsoleTest/*
+ConsoleTest/
