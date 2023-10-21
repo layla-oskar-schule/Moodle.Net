@@ -10,5 +10,11 @@
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
       <PackageReference Include="RestSharp" Version="110.2.1-alpha.0.13" />
     </ItemGroup>
+    
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <OutputPath>bin/Release/net7.0</OutputPath>
+    </PropertyGroup>
 
 </Project>
