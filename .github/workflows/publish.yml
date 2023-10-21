@@ -31,7 +31,7 @@ jobs:
               id: create_release
               #uses: softprops/action-gh-release@v1
               run: |
-                  cd ./Moodle.Net/bin/Release
+                  cd ./Moodle.Net/bin/Release/net7.0
                   ls
               #with:
               #files: ./Moodle.Net/bin/Release/*.nupkg
