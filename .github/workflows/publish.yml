@@ -22,10 +22,7 @@ jobs:
               run: dotnet build
 
             - name: Publish Moodle.Net NuGet package
-              run: |
-                  ls
-                  cd Moodle.Net
-                  dotnet pack -c Release --no-build
+              run: dotnet pack -c Release --no-build
               working-directory: ./Moodle.Net
 
             - name: Create release
