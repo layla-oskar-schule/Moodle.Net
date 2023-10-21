@@ -35,3 +35,4 @@ jobs:
                   title: Release v1.0.0
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              if: github.event_name == 'workflow_dispatch'
