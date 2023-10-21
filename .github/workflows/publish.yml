@@ -2,8 +2,8 @@ name: Publish Moodle.Net
 
 on:
     push:
-        branches:
-            - developer
+        tags:
+            - 'v*'
 
 jobs:
     build-and-publish:
