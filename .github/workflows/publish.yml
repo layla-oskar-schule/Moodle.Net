@@ -2,8 +2,8 @@ name: Publish Moodle.Net Library
 
 on:
     push:
-        tags:
-            - 'v*'
+        branches:
+            - developer
 
 jobs:
     build-and-publish:
