@@ -33,7 +33,6 @@ jobs:
             
             - name: Publish NuGet package
               run: |
-                nuget.exe push ${{ env.BUILD_ARTIFACTS }}/*.nupkg -Source "github"      
+                dotnet nuget push ${{ env.BUILD_ARTIFACTS }}/*.nupkg --source "github" --api-key ${{ secrets.NUGET_API_KEY }}
               env:
                 DOTNET_ROOT: /home/runner/work/_tool/dotnet
-                NUGET_EXE: ${{ env.DOTNET_ROOT }}/dotnet nuget  
