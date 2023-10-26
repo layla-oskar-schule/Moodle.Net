@@ -14,7 +14,7 @@ jobs:
               with:
                   dotnet-version: 7.x
             - name: Build Moodle.Net
-              run: dotnet build
+              run: dotnet build -c Release
             - name: Publish Moodle.Net NuGet package
               run: |
                   cd /home/runner/work/Moodle.Net/Moodle.Net/Moodle.Net
@@ -30,3 +30,10 @@ jobs:
                   tag_name: v1.0.0
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            
+            - name: Publish NuGet package
+              run: |
+                nuget.exe push ${{ env.BUILD_ARTIFACTS }}/*.nupkg -Source "github"      
+              env:
+                DOTNET_ROOT: /home/runner/work/_tool/dotnet
+                NUGET_EXE: ${{ env.DOTNET_ROOT }}/dotnet nuget  
