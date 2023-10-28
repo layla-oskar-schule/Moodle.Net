@@ -24,6 +24,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <OutputPath>bin/Release/net7.0</OutputPath>
         <EnablePackageValidation>true</EnablePackageValidation>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);CS1591</NoWarn>
     </PropertyGroup>
 
 </Project>
