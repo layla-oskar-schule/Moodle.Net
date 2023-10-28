@@ -7,20 +7,24 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        <PrivateAssets>all</PrivateAssets>
-      </PackageReference>
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-      <PackageReference Include="RestSharp" Version="110.2.1-alpha.0.13" />
+        <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+        <PackageReference Include="RestSharp" Version="110.2.1-alpha.0.13"/>
+        <None Include="README.md" Pack="true" PackagePath=""/>
     </ItemGroup>
-    
+
     <PropertyGroup>
         <Authors>Tschokri</Authors>
         <Description>.Net Wrapper for Moodle API</Description>
         <PackageTags>moodle, library</PackageTags>
-        
+        <PackageIconUrl>https://www.realschule-broich.de/images/bilder/logos/moodle_original_logo_icon_146420.png</PackageIconUrl>
+
+        <PackageReadmeFile>README.md</PackageReadmeFile>
         <OutputType>Library</OutputType>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <TargetFramework>net7.0</TargetFramework>
         <OutputPath>bin/Release/net7.0</OutputPath>
         <EnablePackageValidation>true</EnablePackageValidation>
