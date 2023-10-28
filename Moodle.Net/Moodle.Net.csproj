@@ -7,14 +7,23 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
       <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
       <PackageReference Include="RestSharp" Version="110.2.1-alpha.0.13" />
     </ItemGroup>
     
     <PropertyGroup>
+        <Authors>Tschokri</Authors>
+        <Description>.Net Wrapper for Moodle API</Description>
+        <PackageTags>moodle, library</PackageTags>
+        
         <OutputType>Library</OutputType>
         <TargetFramework>net7.0</TargetFramework>
         <OutputPath>bin/Release/net7.0</OutputPath>
+        <EnablePackageValidation>true</EnablePackageValidation>
     </PropertyGroup>
 
 </Project>
