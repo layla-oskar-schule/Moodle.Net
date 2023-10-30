@@ -11,23 +11,14 @@
     </ItemGroup>
 
     <PropertyGroup>
-        <Authors>Tschokri</Authors>
-        <Description>.Net Wrapper for Moodle API</Description>
-        <PackageTags>moodle, library</PackageTags>
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <PackageProjectUrl>https://github.com/tschokri/Moodle.Net</PackageProjectUrl>
-        <PackageIcon>moodle_original_logo_icon_146420.png</PackageIcon>
-        <RepositoryUrl>https://github.com/tschokri/Moodle.Net</RepositoryUrl>
         <Title>Moodle.Net</Title>
-        <IsPackable>true</IsPackable>
 
-        <PackageReadmeFile>README.md</PackageReadmeFile>
         <OutputType>Library</OutputType>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <TargetFramework>net7.0</TargetFramework>
-        <OutputPath>bin/Release/net7.0</OutputPath>
+        <OutputPath>bin/Release/net7.0/net.7.0</OutputPath>
         <EnablePackageValidation>true</EnablePackageValidation>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
         <NoWarn>$(NoWarn);CS1591</NoWarn>

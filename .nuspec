@@ -1,8 +1,0 @@
-<package>
-    <metadata>
-        <id>Moodle.Net</id>
-        <version>1.0.0</version>
-        <authors>tschokri</authors>
-        <description>.net wrapper for moodles api</description>
-    </metadata>
-</package>
