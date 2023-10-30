@@ -30,7 +30,11 @@ jobs:
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
-      - run: dotnet pack --configuration Release --output ${{ env.NuGetDirectory }}
+      
+      - name: Build Moodle.Net
+        run: dotnet build Moodle.Net.csproj -c Release
+        
+      - run: dotnet pack --no-build --configuration Release --output ${{ env.NuGetDirectory }}
 
       - uses: actions/upload-artifact@v3
         with:
