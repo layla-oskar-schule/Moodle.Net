@@ -7,6 +7,7 @@
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
         <PackageReference Include="RestSharp" Version="110.2.1-alpha.0.13"/>
         <None Include="README.md" Pack="true" PackagePath=""/>
+        <None Include="icons/moodle_original_logo_icon_146420.png" Pack="true" PackagePath=""/>
     </ItemGroup>
 
     <PropertyGroup>
@@ -17,7 +18,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageProjectUrl>https://github.com/tschokri/Moodle.Net</PackageProjectUrl>
-        <PackageIcon>icons\moodle_original_logo_icon_146420.png</PackageIcon>
+        <PackageIcon>moodle_original_logo_icon_146420.png</PackageIcon>
         <RepositoryUrl>https://github.com/tschokri/Moodle.Net</RepositoryUrl>
         <Title>Moodle.Net</Title>
         <IsPackable>true</IsPackable>
