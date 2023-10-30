@@ -13,6 +13,11 @@
         </PackageReference>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
         <PackageReference Include="RestSharp" Version="110.2.1-alpha.0.13"/>
+        <None Update="README.md">
+            <Pack>true</Pack>
+            <PackagePath>contentFiles/any/any</PackagePath>
+            <Visible>false</Visible>
+        </None>
     </ItemGroup>
 
     <PropertyGroup>
