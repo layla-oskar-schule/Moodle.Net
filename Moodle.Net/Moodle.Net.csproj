@@ -9,10 +9,8 @@
     <ItemGroup>
         <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-            <PrivateAssets>all</PrivateAssets>
-        </PackageReference>
-        <PackageReference Include="Moodle.Net" Version="1.0.0">
             <ProjectUrl>https://github.com/tschokri/Moodle.Net</ProjectUrl>
+            <PrivateAssets>all</PrivateAssets>
         </PackageReference>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
         <PackageReference Include="RestSharp" Version="110.2.1-alpha.0.13"/>
