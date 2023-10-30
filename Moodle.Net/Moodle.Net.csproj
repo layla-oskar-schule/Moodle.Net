@@ -1,16 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-        <PackageProjectUrl>https://github.com/tschokri/Moodle.Net</PackageProjectUrl>
-        <PackageIcon>icons\moodle_original_logo_icon_146420.png</PackageIcon>
-        <RepositoryUrl>https://github.com/tschokri/Moodle.Net</RepositoryUrl>
-        <Title>Moodle.Net</Title>
-        <IsPackable>true</IsPackable>
-    </PropertyGroup>
-
     <ItemGroup>
         <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -25,7 +13,15 @@
         <Authors>Tschokri</Authors>
         <Description>.Net Wrapper for Moodle API</Description>
         <PackageTags>moodle, library</PackageTags>
-        
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <PackageProjectUrl>https://github.com/tschokri/Moodle.Net</PackageProjectUrl>
+        <PackageIcon>icons\moodle_original_logo_icon_146420.png</PackageIcon>
+        <RepositoryUrl>https://github.com/tschokri/Moodle.Net</RepositoryUrl>
+        <Title>Moodle.Net</Title>
+        <IsPackable>true</IsPackable>
+
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <OutputType>Library</OutputType>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -37,8 +33,8 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <OutputPath>bin/Release/net7.0/</OutputPath>
-      <DocumentationFile>obj/Release/net7.0/Moodle.Net.xml</DocumentationFile>
+        <OutputPath>bin/Release/net7.0/</OutputPath>
+        <DocumentationFile>obj/Release/net7.0/Moodle.Net.xml</DocumentationFile>
     </PropertyGroup>
 
 </Project>
