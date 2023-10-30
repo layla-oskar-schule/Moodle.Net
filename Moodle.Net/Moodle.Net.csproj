@@ -9,21 +9,18 @@
     <ItemGroup>
         <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-            <ProjectUrl>https://github.com/tschokri/Moodle.Net</ProjectUrl>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
         <PackageReference Include="RestSharp" Version="110.2.1-alpha.0.13"/>
         <None Include="README.md" Pack="true" PackagePath=""/>
-        <None Include="../moodle_original_logo_icon_146420.png" Pack="true" Visible="false"
-              PackagePath="icons/moodle_original_logo_icon_146420.png"/>
     </ItemGroup>
 
     <PropertyGroup>
         <Authors>Tschokri</Authors>
         <Description>.Net Wrapper for Moodle API</Description>
         <PackageTags>moodle, library</PackageTags>
-        <PackageIcon>icons/moodle_original_logo_icon_146420.png</PackageIcon>
+        <PackageIconUrl>https://www.realschule-broich.de/images/bilder/logos/moodle_original_logo_icon_146420.png</PackageIconUrl>
 
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <OutputType>Library</OutputType>
@@ -32,7 +29,6 @@
         <OutputPath>bin/Release/net7.0</OutputPath>
         <EnablePackageValidation>true</EnablePackageValidation>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <NoWarn>$(NoWarn);CS1591</NoWarn>
     </PropertyGroup>
 
