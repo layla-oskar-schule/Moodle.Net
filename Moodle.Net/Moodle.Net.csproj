@@ -10,17 +10,21 @@
         <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
+            <ProjectUrl>https://github.com/tschokri/Moodle.Net</ProjectUrl>
         </PackageReference>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
         <PackageReference Include="RestSharp" Version="110.2.1-alpha.0.13"/>
         <None Include="README.md" Pack="true" PackagePath=""/>
+        <None Update="icons/moodle_original_logo_icon_146420.png">
+            <Pack>true</Pack>
+            <PackagePath>icons</PackagePath>
+        </None>
     </ItemGroup>
 
     <PropertyGroup>
         <Authors>Tschokri</Authors>
         <Description>.Net Wrapper for Moodle API</Description>
         <PackageTags>moodle, library</PackageTags>
-        <ProjectUrl>https://github.com/tschokri/Moodle.Net</ProjectUrl>
         
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <OutputType>Library</OutputType>
