@@ -32,6 +32,7 @@
         <OutputPath>bin/Release/net7.0</OutputPath>
         <EnablePackageValidation>true</EnablePackageValidation>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <NoWarn>$(NoWarn);CS1591</NoWarn>
     </PropertyGroup>
 
