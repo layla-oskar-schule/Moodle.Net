@@ -20,8 +20,8 @@
         <Authors>Tschokri</Authors>
         <Description>.Net Wrapper for Moodle API</Description>
         <PackageTags>moodle, library</PackageTags>
-        <PackageIconUrl>https://www.realschule-broich.de/images/bilder/logos/moodle_original_logo_icon_146420.png</PackageIconUrl>
-
+        <ProjectUrl>https://github.com/tschokri/Moodle.Net</ProjectUrl>
+        
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <OutputType>Library</OutputType>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
