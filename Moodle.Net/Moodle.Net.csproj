@@ -9,6 +9,7 @@
     <ItemGroup>
         <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <ProjectUrl>https://github.com/tschokri/Moodle.Net</ProjectUrl>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
@@ -20,8 +21,7 @@
         <Authors>Tschokri</Authors>
         <Description>.Net Wrapper for Moodle API</Description>
         <PackageTags>moodle, library</PackageTags>
-        <PackageIconUrl>https://www.realschule-broich.de/images/bilder/logos/moodle_original_logo_icon_146420.png</PackageIconUrl>
-
+        
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <OutputType>Library</OutputType>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
