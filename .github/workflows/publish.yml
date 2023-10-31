@@ -29,12 +29,18 @@ jobs:
   
   test:
     runs-on: ubuntu-latest
+    
+    needs: [ build ]
+    
     steps:
       - name: Run tests
         run: dotnet test Configuration=$BUILD_CONFIG --no-restore --no-build --verbosity normal
         
   deploy:
     runs-on: ubuntu-latest
+    
+    needs: [ test ]
+    
     steps:
       - name: Create NuGet package
         run: dotnet test /p:Configuration=Release --no-restore --no-build --verbosity normal
