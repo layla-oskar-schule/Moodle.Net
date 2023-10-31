@@ -34,7 +34,7 @@ jobs:
     
     steps:
       - name: Run tests
-        run: dotnet test Configuration=$BUILD_CONFIG --no-restore --no-build --verbosity normal
+        run: dotnet test Configuration=Release --no-restore --no-build --verbosity normal
         
   deploy:
     runs-on: ubuntu-latest
