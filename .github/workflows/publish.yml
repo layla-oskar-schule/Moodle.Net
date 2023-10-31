@@ -36,4 +36,4 @@ jobs:
       - name: Create NuGet package
         run: dotnet pack Moodle.Net/Moodle.Net.csproj
         
-      - name: Deploy NuGet package
+    
