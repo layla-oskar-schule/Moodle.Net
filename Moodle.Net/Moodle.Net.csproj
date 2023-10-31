@@ -17,15 +17,14 @@
         <Title>Moodle.Net</Title>
 
         <OutputType>Library</OutputType>
-        <TargetFramework>net7.0</TargetFramework>
-        <OutputPath>bin/Release/net7.0/net.7.0</OutputPath>
+        <OutputPath>bin/Release</OutputPath>
         <EnablePackageValidation>true</EnablePackageValidation>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
         <NoWarn>$(NoWarn);CS1591</NoWarn>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-        <OutputPath>bin/Release/net7.0/</OutputPath>
+        <OutputPath>bin/Release</OutputPath>
         <DocumentationFile>obj/Release/net7.0/Moodle.Net.xml</DocumentationFile>
     </PropertyGroup>
 
