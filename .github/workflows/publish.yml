@@ -31,9 +31,9 @@ jobs:
         run: dotnet build $SOLUTION --configuration $BUILD_CONFIG --no-restore
         
       - name: Run tests
-        run: dotnet test /p:Configuration=$env:BUILD_CONFIG --no-restore --no-build --verbosity normal
+        run: dotnet test /p:Configuration=$BUILD_CONFIG --no-restore --no-build --verbosity normal
         
       - name: Create NuGet package
         run: dotnet pack Moodle.Net/Moodle.Net.csproj
         
-        
+      - name: Deploy NuGet package
