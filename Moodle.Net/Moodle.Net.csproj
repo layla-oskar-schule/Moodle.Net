@@ -14,13 +14,16 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <Title>Moodle.Net</Title>
+        <Title>Moodle for Motion</Title>
 
         <OutputType>Library</OutputType>
         <OutputPath>bin/Release</OutputPath>
         <EnablePackageValidation>true</EnablePackageValidation>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
         <NoWarn>$(NoWarn);CS1591</NoWarn>
+        <AssemblyName>MoodleForNotion</AssemblyName>
+        <PackageId>MoodleForMotion</PackageId>
+        <Authors>Tschokri</Authors>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">

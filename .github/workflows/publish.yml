@@ -6,34 +6,40 @@ on:
       - developer
 
 jobs:
+  
   build:
-    env:
-      BUILD_CONFIG: 'Release'
-      SOLUTION: 'Moodle.Net'
-      
     runs-on: ubuntu-latest
-      
+    
     steps:
       - uses: actions/checkout@v2
-          
+
       - name: Setup NuGet
         uses: NuGet/setup-nuget@v1.0.5
-          
+
       - name: Restore dependencies
-        run: nuget restore $SOLUTION.sln
-        
+        run: nuget restore Moodle.Net.sln
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: '7.x'
-      
+
       - name: Build
-        run: dotnet build $SOLUTION --configuration $BUILD_CONFIG --no-restore
-        
+        run: dotnet build Moodle.Net --configuration Release --no-restore
+  
+  test:
+    runs-on: ubuntu-latest
+    steps:
       - name: Run tests
         run: dotnet test Configuration=$BUILD_CONFIG --no-restore --no-build --verbosity normal
         
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
       - name: Create NuGet package
-        run: dotnet pack Moodle.Net/Moodle.Net.csproj
-        
-    
+        run: dotnet test /p:Configuration=Release --no-restore --no-build --verbosity normal
+      
+      - name: Deploy on NuGet.org
+        run: |
+          cd Moodle.Net/bin/Release
+          dotnet nuget push MoodleForMotion.1.0.0.nupkg --api-key ${{ secrets.NUGET_APIKEY }}  --source https://api.nuget.org/v3/index.json
