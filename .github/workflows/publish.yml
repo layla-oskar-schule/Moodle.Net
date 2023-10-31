@@ -34,7 +34,7 @@ jobs:
     
     steps:
       - name: Run tests
-        run: dotnet test /p:Configuration=Release --no-restore --no-build --verbosity normal
+        run: dotnet test Moodle.Net/Moodle.Net.csproj /p:Configuration=Release --no-restore --no-build --verbosity normal
         
   deploy:
     runs-on: ubuntu-latest
@@ -43,9 +43,7 @@ jobs:
     
     steps:
       - name: Create NuGet package
-        run: |
-          cd Moodle.Net
-          dotnet test /p:Configuration=Release --no-restore --no-build --verbosity normal
+        run: dotnet pack Moodle.Net/Moodle.Net.csproj
       
       - name: Deploy on NuGet.org
         run: |
