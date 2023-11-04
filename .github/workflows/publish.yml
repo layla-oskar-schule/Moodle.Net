@@ -1,54 +1,52 @@
 name: Build and Publish
 
 on:
-  push:
-    branches:
-      - developer
+    push:
+        branches:
+            - developer
 
 jobs:
-  
-  build:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - uses: actions/checkout@v2
+    build:
+        runs-on: ubuntu-latest
 
-      - name: Setup NuGet
-        uses: NuGet/setup-nuget@v1.0.5
+        steps:
+            - uses: actions/checkout@v2
 
-      - name: Restore dependencies
-        run: nuget restore Moodle.Net.sln
+            - name: Setup NuGet
+              uses: NuGet/setup-nuget@v1.0.5
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v2
-        with:
-          dotnet-version: '7.x'
+            - name: Restore dependencies
+              run: nuget restore Moodle.Net.sln
 
-      - name: Build
-        run: dotnet build Moodle.Net --configuration Release --no-restore
-  
-  test:
-    runs-on: ubuntu-latest
-    
-    needs: [ build ]
-    
-    steps:
-      - name: Run tests
-        run: |
-          cd ..
-          ls
-          dotnet test Moodle.Net/Moodle.Net.csproj /p:Configuration=Release --no-restore --no-build --verbosity normal
-        
-  deploy:
-    runs-on: ubuntu-latest
-    
-    needs: [ test ]
-    
-    steps:
-      - name: Create NuGet package
-        run: dotnet pack Moodle.Net/Moodle.Net.csproj
-      
-      - name: Deploy on NuGet.org
-        run: |
-          cd Moodle.Net/bin/Release
-          dotnet nuget push MoodleForMotion.1.0.0.nupkg --api-key ${{ secrets.NUGET_APIKEY }}  --source https://api.nuget.org/v3/index.json
+            - name: Setup .NET
+              uses: actions/setup-dotnet@v2
+              with:
+                  dotnet-version: '7.x'
+
+            - name: Build
+              run: dotnet build Moodle.Net --configuration Release --no-restore
+
+    test:
+        runs-on: ubuntu-latest
+
+        needs: [build]
+
+        steps:
+            - name: Run tests
+              run: |
+                  ls -a
+                  dotnet test Moodle.Net/Moodle.Net.csproj /p:Configuration=Release --no-restore --no-build --verbosity normal
+
+    deploy:
+        runs-on: ubuntu-latest
+
+        needs: [test]
+
+        steps:
+            - name: Create NuGet package
+              run: dotnet pack Moodle.Net/Moodle.Net.csproj
+
+            - name: Deploy on NuGet.org
+              run: |
+                  cd Moodle.Net/bin/Release
+                  dotnet nuget push MoodleForMotion.1.0.0.nupkg --api-key ${{ secrets.NUGET_APIKEY }}  --source https://api.nuget.org/v3/index.json
