@@ -35,6 +35,7 @@ jobs:
     steps:
       - name: Run tests
         run: |
+          cd ..
           ls
           dotnet test Moodle.Net/Moodle.Net.csproj /p:Configuration=Release --no-restore --no-build --verbosity normal
         
