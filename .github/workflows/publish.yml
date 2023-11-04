@@ -48,6 +48,12 @@ jobs:
         needs: [test]
 
         steps:
+            - name: Checkout Code
+              uses: actions/checkout@v2
+
+            - name: Set up .Net
+              uses: actions/setup-dotnet@v2
+
             - name: Create NuGet package
               run: dotnet pack Moodle.Net/Moodle.Net.csproj
 
