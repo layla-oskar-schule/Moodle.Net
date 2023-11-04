@@ -10,7 +10,8 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - uses: actions/checkout@v2
+            - name: Checkout code
+              uses: actions/checkout@v2
 
             - name: Setup NuGet
               uses: NuGet/setup-nuget@v1.0.5
@@ -32,6 +33,12 @@ jobs:
         needs: [build]
 
         steps:
+            - name: Checkout Code
+              uses: actions/checkout@v2
+
+            - name: Set up .Net
+              uses: actions/setup-dotnet@v2
+
             - name: Run tests
               run: dotnet test ./Moodle.Net.sln /p:Configuration=Release --no-restore --no-build --verbosity normal
 
