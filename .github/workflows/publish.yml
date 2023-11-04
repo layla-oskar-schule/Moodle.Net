@@ -16,7 +16,7 @@ jobs:
               uses: NuGet/setup-nuget@v1.0.5
 
             - name: Restore dependencies
-              run: nuget restore Moodle.Net.sln
+              run: nuget restore ./Moodle.Net.sln
 
             - name: Setup .NET
               uses: actions/setup-dotnet@v2
@@ -24,7 +24,7 @@ jobs:
                   dotnet-version: '7.x'
 
             - name: Build
-              run: dotnet build Moodle.Net --configuration Release --no-restore
+              run: dotnet build Moodle.Net/Moodle.Net.csproj --configuration Release --no-restore
 
     test:
         runs-on: ubuntu-latest
@@ -33,7 +33,7 @@ jobs:
 
         steps:
             - name: Run tests
-              run: dotnet test Moodle.Net/Moodle.Net.csproj /p:Configuration=Release --no-restore --no-build --verbosity normal
+              run: dotnet test ./Moodle.Net.sln /p:Configuration=Release --no-restore --no-build --verbosity normal
 
     deploy:
         runs-on: ubuntu-latest
