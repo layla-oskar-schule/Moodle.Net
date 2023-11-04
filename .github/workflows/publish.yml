@@ -33,9 +33,7 @@ jobs:
 
         steps:
             - name: Run tests
-              run: |
-                  ls Moodle.Net
-                  dotnet test Moodle.Net/Moodle.Net.csproj /p:Configuration=Release --no-restore --no-build --verbosity normal
+              run: dotnet test Moodle.Net/Moodle.Net.csproj /p:Configuration=Release --no-restore --no-build --verbosity normal
 
     deploy:
         runs-on: ubuntu-latest
