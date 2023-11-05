@@ -59,10 +59,7 @@ jobs:
                   cd Moodle.Net
                   dotnet pack --configuration Release -p:Version=$PACKAGE_VERSION
 
-            - name: Deploy on NuGet.org
-              run: dotnet nuget push ./Moodle.Net/bin/Release/*.nupkg -k ${{ secrets.NUGET_APIKEY }} -s https://api.nuget.org/v3/index.json
-
-            - name: Create GitHub package
+            - name: Create Release
               run: |
                   echo "//nuget.pkg.github.com/tschokri/index.json" > NuGet.Config
                   dotnet nuget add source "https://nuget.pkg.github.com/tschokri/index.json" --name github
