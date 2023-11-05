@@ -65,3 +65,4 @@ jobs:
                   dotnet nuget add source "https://nuget.pkg.github.com/tschokri/index.json" --name github
                   cd /home/runner/work/Moodle.Net/Moodle.Net/Moodle.Net/bin/Release/
                   dotnet nuget push ./*.nupkg --source github -k ${{ secrets.GITHUB_TOKEN }}
+                  dotnet nuget push --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json
