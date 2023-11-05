@@ -50,7 +50,8 @@ jobs:
 
             - name: Create NuGet package
               run: |
-                  cd Moodle.Net/Moodle.Net
+                  cd Moodle.Net
+                  ls -a
                   dotnet pack --configuration Release -p:Version=$PACKAGE_VERSION Moodle.Net/Moodle.Net.csproj
 
             - name: Deploy on NuGet.org
