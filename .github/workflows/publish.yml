@@ -61,7 +61,6 @@ jobs:
 
             - name: Create Release
               run: |
-                  |
                   echo "//nuget.pkg.github.com/tschokri/index.json" > NuGet.Config.xml
                   dotnet nuget add source "https://nuget.pkg.github.com/tschokri/index.json" --name github -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }}
                   cd Moodle.Net/bin/Release  # Adjust the path to your .nupkg files
