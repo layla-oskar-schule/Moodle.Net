@@ -1,9 +1,9 @@
 name: Build and Publish
 
 on:
-    push:
-        branches:
-            - developer
+    release:
+        types:
+            - created
 
 jobs:
     build:
@@ -25,7 +25,7 @@ jobs:
                   dotnet-version: '7.x'
 
             - name: Build
-              run: dotnet build Moodle.Net/Moodle.Net.csproj --configuration Release --no-restore
+              run: dotnet build Moodle.Net/Moodle.Net.csproj -c Release
 
     test:
         runs-on: ubuntu-latest
@@ -51,13 +51,16 @@ jobs:
             - name: Checkout Code
               uses: actions/checkout@v2
 
+            - name: Set NuGet package version
+              run: echo "::set-env name=PACKAGE_VERSION::$(echo ${{ github.ref }} | sed 's/refs\/tags\///')"
+
             - name: Set up .Net
               uses: actions/setup-dotnet@v2
 
             - name: Create NuGet package
-              run: dotnet pack Moodle.Net/Moodle.Net.csproj
+              run: dotnet pack Moodle.Net/Moodle.Net.csproj -c Release /p:Version=$PACKAGE_VERSION
 
             - name: Deploy on NuGet.org
               run: |
                   cd Moodle.Net/bin/Release
-                  dotnet nuget push MoodleForMotion.1.0.0.nupkg --api-key ${{ secrets.NUGET_APIKEY }}  --source https://api.nuget.org/v3/index.json
+                  dotnet nuget push ./bin/Release/*.nupkg -k ${{ secrets.NUGET_APIKEY }} -s https://api.nuget.org/v3/index.json
