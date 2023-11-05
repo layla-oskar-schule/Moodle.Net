@@ -48,9 +48,6 @@ jobs:
         needs: [test]
 
         steps:
-            - name: Checkout Code
-              uses: actions/checkout@v2
-
             - name: Set NuGet package version
               id: version
               run: echo "::set-output name=PACKAGE_VERSION::$(echo ${{ github.ref }} | sed 's/refs\/tags\///')"
