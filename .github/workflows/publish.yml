@@ -59,7 +59,7 @@ jobs:
               uses: actions/setup-dotnet@v2
 
             - name: Create NuGet package
-              run: dotnet pack /p:Version=${{ steps.version.outputs.PACKAGE_VERSION }} --configuration Release
+              run: dotnet pack --configuration Release /p:Version=${{ steps.version.outputs.PACKAGE_VERSION }}
 
             - name: Deploy on NuGet.org
               run: |
