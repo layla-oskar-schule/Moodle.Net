@@ -56,7 +56,7 @@ jobs:
               uses: actions/setup-dotnet@v2
 
             - name: Create NuGet package
-              run: dotnet pack --configuration Release -property:Version=${{ steps.version.outputs.PACKAGE_VERSION }}
+              run: dotnet pack --configuration Release -p:Version=${{ steps.version.outputs.PACKAGE_VERSION }} Moodle.Net/Moodle.Net.csproj
 
             - name: Deploy on NuGet.org
               run: |
