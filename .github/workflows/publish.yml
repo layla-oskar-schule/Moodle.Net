@@ -60,6 +60,4 @@ jobs:
                   dotnet pack --configuration Release -p:Version=$PACKAGE_VERSION
 
             - name: Deploy on NuGet.org
-              run: |
-                  cd Moodle.Net/bin/Release
-                  dotnet nuget push ./bin/Release/*.nupkg -k ${{ secrets.NUGET_APIKEY }} -s https://api.nuget.org/v3/index.json
+              run: dotnet nuget push ./bin/Release/*.nupkg -k ${{ secrets.NUGET_APIKEY }} -s https://api.nuget.org/v3/index.json
