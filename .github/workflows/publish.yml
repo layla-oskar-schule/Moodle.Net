@@ -57,7 +57,7 @@ jobs:
             - name: Create NuGet package
               run: |
                   cd Moodle.Net
-                  dotnet pack --configuration Release -p:Version=$PACKAGE_VERSION --no-restore
+                  dotnet pack --configuration Release -p:Version=$PACKAGE_VERSION
 
             - name: Create Release
               run: |
